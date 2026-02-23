@@ -98,10 +98,6 @@ def get_extensions():
                 "-D__CUDA_NO_HALF_OPERATORS__",
                 "-D__CUDA_NO_HALF_CONVERSIONS__",
                 "-D__CUDA_NO_HALF2_OPERATORS__",
-                "-gencode=arch=compute_70,code=sm_70",
-                "-gencode=arch=compute_75,code=sm_75",
-                "-gencode=arch=compute_80,code=sm_80",
-                "-gencode=arch=compute_86,code=sm_86",
             ],
         }
         cuda_version = None
@@ -188,7 +184,7 @@ setup(
     include_package_data=True,
     install_requires=REQUIRED_PACKAGES,
     extras_require=EXTRA_PACKAGES,
-    python_requires=">=3.10.0",
+    # python_requires=">=3.10.0",
     ext_modules=get_extensions(),
     cmdclass=cmdclass,
 )
